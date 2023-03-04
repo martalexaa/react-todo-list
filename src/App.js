@@ -59,6 +59,7 @@ function App() {
           </Row>
           <div className='left-todos' >{todos.filter(todo => !todo.complete).length} todos left</div>
           <TodoList todos={todos} toggleTodo={toggleTodo} />
+          <Row className='footer' />
         </Col>
       </Container>
     </>
