@@ -52,7 +52,7 @@ function App() {
           <Row className="title" ><h1>My Favorite Todo App</h1></Row>
           <div className='instructions' >
             <p>Type your todos one by one and add them by clicking the 'Add' button.</p>
-            <p>If you're done, click on the checkbox and hit the 'Clear' button.</p>
+            <p>If a task is done, click on the checkbox and hit the 'Clear' button.</p>
           </div>
           <Row>
             <input ref={todoNameRef} type="text" className='input' placeholder='Type here...' ></input>
