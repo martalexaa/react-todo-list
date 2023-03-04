@@ -42,12 +42,17 @@ function App() {
   }
 
   function handleClearTodos() {
+    const completedTodos = todos.filter(todo => todo.complete);
+    if (completedTodos.length === 0) {
+      alert('Please select an item by clicking the checkbox');
+      return;
+    }
     const newTodos = todos.filter(todo => !todo.complete)
     setTodos(newTodos)
   }
 
   function handleClearAllTodos() {
-    setTodos([])
+    setTodos([]);
   }
 
   return (
