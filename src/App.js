@@ -30,8 +30,8 @@ function App() {
   function handleAddTodo() {
     const name = todoNameRef.current.value;
     if (name === '') return;
-    if (name.length > 10) {
-      window.alert("Todo shouldn't exceed 10 characters");
+    if (name.length > 15) {
+      window.alert("Todo shouldn't exceed 15 characters");
       return;
     }
     setTodos(prevTodos => {
