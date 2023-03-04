@@ -19,7 +19,7 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos)) //save to local storage
   }, [todos])
 
-  //toggle between complete and incomplete
+  //toggle between completed and incompleted todos
   function toggleTodo(id) {
     const newTodos = [...todos]
     const todo = newTodos.find(todo => todo.id === id)
@@ -27,13 +27,17 @@ function App() {
     setTodos(newTodos)
   }
 
-  function handleAddTodo(e) {
-    const name = todoNameRef.current.value
-    if (name === '') return
+  function handleAddTodo() {
+    const name = todoNameRef.current.value;
+    if (name === '') return;
+    if (name.length > 10) {
+      window.alert("Todo shouldn't exceed 10 characters");
+      return;
+    }
     setTodos(prevTodos => {
-      return [...prevTodos, { id: uuid(), name: name, complete: false }]
-    })
-    todoNameRef.current.value = null
+      return [...prevTodos, { id: uuid(), name: name, complete: false }];
+    });
+    todoNameRef.current.value = '';
   }
 
   function handleClearTodos() {
